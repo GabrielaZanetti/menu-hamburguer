@@ -14,6 +14,115 @@ body{
         justify-content: center;
         position: relative;
         animation: backgroundTransition 8s ease-in-out infinite;
+        .checkbox-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            #toggle{
+                display: none;
+                &:checked + .checkbox{
+                    background-color: #fff;
+                    .trace{
+                        &:nth-child(1){
+                            transform: rotate(45deg);
+                            background-color: #000;
+                            top: 47px;
+                        }
+                        &:nth-child(2){
+                            transform: translateX(-100px);
+                            width: 30px;
+                            visibility: hidden;
+                            background-color: #000;
+                            opacity: 0;
+                        }
+                        &:nth-child(3){
+                            transform: rotate(-45deg);
+                            background-color: #000;
+                            top: 47px;
+                        }
+                    }
+                }
+                &:checked ~ .menu{
+                    box-shadow: 0px 0px 0px 100vmax #fff;
+                    z-index: 1;
+                }
+                &:checked ~ .menu-itens{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            .checkbox{
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 99999;
+                transition: 400ms ease-in-out 0;
+                .trace{
+                    width: 50px;
+                    height: 2px;
+                    background-color: #fff;
+                    position: absolute;
+                    border-radius: 4px;
+                    transition: 0.5s ease-in-out;
+                    &:nth-child(1){
+                        top: 26px;
+                        transform: rotate(0);
+                    }
+                    &:nth-child(2){
+                        top: 46px;
+                        transform: rotate(0);
+                    }
+                    &:nth-child(3){
+                        top: 66px;
+                        transform: rotate(0);
+                    }
+                }
+            }
+            .menu{
+                position: absolute;
+                top: 28px;
+                right: 30px;
+                background-color: transparent;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                box-shadow: 0px 0px 0px 0px #fff;
+                z-index: -1;
+                transition: 400ms ease-in-out 0s;
+            }
+            .menu-itens{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+                opacity: 0;
+                visibility: hidden;
+                transition: 400ms ease-in-out 0s;
+                ul{
+                    list-style-type: none;
+                    li{
+                        a{
+                            margin: 10px 0;
+                            color: #000;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            letter-spacing: 4px;
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+        }
         h1{
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -56,3 +165,5 @@ body{
         background-position: 0% 80%;
     }
 }
+
+/*  animacao do menu    */
