@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: #dda1ab;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .checkbox-wrapper {
+  border: 3px solid #fff;
+  border-radius: 14px;
+}
+
+.wrapper .checkbox-wrapper #toggle {
+  display: none;
+}
+
+.wrapper .checkbox-wrapper #toggle:checked + .checkbox .trace:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 45px;
+}
+
+.wrapper .checkbox-wrapper #toggle:checked + .checkbox .trace:nth-child(2) {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  width: 30px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.wrapper .checkbox-wrapper #toggle:checked + .checkbox .trace:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 45px;
+}
+
+.wrapper .checkbox-wrapper .checkbox {
+  width: 100px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.wrapper .checkbox-wrapper .checkbox .trace {
+  width: 90px;
+  height: 8px;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 4px;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.wrapper .checkbox-wrapper .checkbox .trace:nth-child(1) {
+  top: 26px;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.wrapper .checkbox-wrapper .checkbox .trace:nth-child(2) {
+  top: 46px;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.wrapper .checkbox-wrapper .checkbox .trace:nth-child(3) {
+  top: 66px;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
